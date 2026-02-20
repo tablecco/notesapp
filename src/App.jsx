@@ -35,6 +35,7 @@ export default function App() {
   }, []);
 
   async function fetchNotes() {
+    console.log("******** fetchNotes START ********");
     const { data: notes } = await client.models.Note.list();
     await Promise.all(
       notes.map(async (note) => {
@@ -54,7 +55,7 @@ export default function App() {
 
   async function createNote(event) {
     event.preventDefault();
-    console.log("createNote event.target=" + event.target)
+    console.log("******** createNote START event.target=" + event.target)
     const form = new FormData(event.target);
     console.log(form.get("image").name);
 
@@ -77,6 +78,7 @@ export default function App() {
   }
 
   async function deleteNote({ id }) {
+    console.log("******** deleteNote START ********");
     const toBeDeletedNote = {
       id: id,
     };
