@@ -5,30 +5,33 @@ export const storage = defineStorage(
         name: "amplifyNotesDrive",
         access: (allow) => (
             {
-                "media/{entry_id}/*": [
+                "media/{entity_id}/*": [
                     allow.entity("identity").to(
                         [
                             "read",
                             "write",
-                            "delete",
+                            "delete"
                         ]
                     ),
-
+                    // allow.authenticated.to(
+                    //     [
+                    //         "read"
+                    //     ]
+                    // )
                 ],
-                "public/*": [
-                    allow.authenticated.to(
-                        [
-                            "read",
-                            "write"
-
-                        ]
-                    ),
-                    allow.guest.to(
-                        [
-                            "read"
-                        ]
-                    )
-                ]
+                // "public/*": [
+                //     allow.authenticated.to(
+                //         [
+                //             "read",
+                //             "write"
+                //         ]
+                //     ),
+                //     allow.guest.to(
+                //         [
+                //             "read"
+                //         ]
+                //     )
+                // ]
             }
         ),
     }
