@@ -7,7 +7,9 @@
     "dev": "vite",
     "build": "vite build",
     "lint": "eslint .",
-    "preview": "vite preview"
+    "preview": "vite preview",
+    "type-check": "tcs --noEmit",
+    "type-check:amplify": "cd amplify && tsc --noEmit"
   },
   "dependencies": {
     "@aws-amplify/ui-react": "^6.15.0",

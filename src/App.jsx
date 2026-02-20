@@ -22,11 +22,11 @@ import outputs from "../amplify_outputs.json";
  * @type {import('aws-amplify/data').Client<import('../amplify/data/resource').Schema>}
  */
 
-outputs.Logger = {
-  level: 'INFO',
-  region: 'ap-northeast-1',
-  logGroupName: '/aws/amplify/notesapp'
-};
+// outputs.Logger = {
+//   level: 'INFO',
+//   region: 'ap-northeast-1',
+//   logGroupName: '/aws/amplify/notesapp'
+// };
 Amplify.configure(outputs);
 const client = generateClient({
   authMode: "userPool",
