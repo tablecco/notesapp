@@ -54,6 +54,7 @@ export default function App() {
 
   async function createNote(event) {
     event.preventDefault();
+    console.log("createNote event.target=" + event.target)
     const form = new FormData(event.target);
     console.log(form.get("image").name);
 
@@ -63,7 +64,7 @@ export default function App() {
       image: form.get("image").name,
     });
 
-    console.log(newNote);
+    console.log("createNote newNode" + newNote);
     if (newNote.image)
       if (newNote.image)
         await uploadData({
